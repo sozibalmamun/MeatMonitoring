@@ -1,0 +1,8 @@
+
+#fiirmware space 8M 0x800000, nvs 32k, face data 3M, 2 M forFAT 
+
+# Name,  Type, SubType, Offset,   Size, Flags
+factory, app,  factory, 0x010000, 0x400000,
+nvs,     data, nvs,     0x810000, 0x8000,
+fr,      data,       ,  0x818000, 0x300000,
+storage, data, fat,     0xB18000, 0x200000,

@@ -1,0 +1,54 @@
+
+#old
+
+# Name,   Type, SubType, Offset,  Size, Flags
+# Note: if you change the phy_init or app partition offset, make sure to change the offset in Kconfig.projbuild
+factory, app,  factory, 0x010000, 3840K
+nvs,     data, nvs,     0x3D0000, 16K
+fr,      data,   ,      0x3E0000, 128K
+
+
+
+
+#new
+# fiirmware space 5M, user data space 2M
+# Name,   Type, SubType, Offset,  Size, Flags
+# Note: if you change the phy_init or app partition offset, make sure to change the offset in Kconfig.projbuild,,,,
+factory, app,  factory, 0x010000, 0x500000,
+nvs,     data, nvs,     0x510000,0x80000,
+fr,      data,   ,      0x590000,0x200000,
+
+
+
+#new test 
+# fiirmware space 5M, user data space 2M
+# Name,   Type, SubType, Offset,  Size, Flags
+# Note: if you change the phy_init or app partition offset, make sure to change the offset in Kconfig.projbuild,,,,
+factory, app,  factory, 0x010000, 0x500000,
+nvs,     data, nvs,     0x510000,0x80000,
+fr,      data,   ,      0x590000,0x500000,
+
+
+# Name,   Type, SubType, Offset,  Size, Flags
+# Note: if you change the phy_init or app partition offset, make sure to change the offset in Kconfig.projbuild,,,,
+#factory, app,  factory, 0x010000, 0x500000,
+#nvs,     data, nvs,     0x510000,0x80000,
+#fr,      data,   ,      0x590000,0x200000,
+
+
+#fiirmware dpace 8M, user data 3M
+
+# Name,   Type, SubType, Offset,  Size, Flags
+# Note: if you change the phy_init or app partition offset, make sure to change the offset in Kconfig.projbuild,,,,
+factory, app,  factory, 0x010000, 0x800000,
+nvs,     data, nvs,     0x810000,0x80000,
+fr,      data,   ,      0x890000,0x300000,
+
+
+#fiirmware space 8M, nvs 10k, face data 3M, 2 M forFAT
+
+# Name,   Type, SubType, Offset,  Size, Flags
+factory, app,  factory, 0x010000, 0x800000,
+nvs,     data, nvs,     0x810000, 0x4000,
+fr,      data,       ,  0x814000, 0x300000,
+storage, data, fat,     0xB14000, 0x200000,
